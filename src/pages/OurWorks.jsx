@@ -12,7 +12,7 @@ const OurWorks = () => {
   return (
     <div style={{ minHeight: '100vh' }} className="page-enter">
       {/* Hero Section */}
-      <div style={{ width: '100vw', height: '100vh', backgroundImage: 'url(https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=80)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div className="hero-section" style={{ width: '100vw', height: '100vh', backgroundImage: 'url(https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=80)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0, 0, 0, 0.6)', backdropFilter: 'blur(2px)' }}></div>
         <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', color: '#fff', padding: '0 5%', maxWidth: '900px' }} className="fade-in-up">
           <p style={{ color: '#c1a96c', fontSize: '1rem', fontWeight: '700', letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '2rem', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>Our Legacy</p>
@@ -81,6 +81,12 @@ const OurWorks = () => {
           h1 { font-size: 3rem !important; }
           p { font-size: 1rem !important; }
           div[style*="backgroundAttachment: 'fixed'"] { background-attachment: scroll !important; }
+          .project-showcase img { display: none !important; }
+          .hero-section {
+            background-image: url(https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80) !important;
+            background-position: center !important;
+            height: 100vh !important;
+          }
         }
       `}</style>
     </div>

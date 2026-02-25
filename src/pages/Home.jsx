@@ -30,7 +30,7 @@ const Home = () => {
         <Slider {...settings}>
           {slides.map((slide, index) => (
             <div key={index}>
-              <div style={{ width: '100vw', height: '100vh', backgroundImage: `url(${slide})`, backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative' }}>
+              <div className="hero-slide" data-slide={index} style={{ width: '100vw', height: '100vh', backgroundImage: `url(${slide})`, backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative' }}>
                 <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0, 0, 0, 0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <div style={{ maxWidth: '900px', padding: '0 3rem', textAlign: 'center', color: '#fff' }}>
                     <h1 style={{ fontSize: '4rem', fontWeight: '800', marginBottom: '2rem', lineHeight: '1.2', color: '#fff', textShadow: '2px 2px 8px rgba(0, 0, 0, 0.5)', fontFamily: '"Playfair Display", serif' }}>
@@ -233,10 +233,19 @@ const Home = () => {
       </div>
 
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
         @media (max-width: 968px) {
           .philosophy-grid { grid-template-columns: 1fr !important; }
           .services-grid { grid-template-columns: 1fr !important; }
           .methodology-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 768px) {
+          .hero-slide[data-slide="0"] { background-image: url(https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80) !important; }
+          .hero-slide[data-slide="1"] { background-image: url(https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80) !important; }
+          .hero-slide[data-slide="2"] { background-image: url(https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=600&q=80) !important; }
+          .hero-slide[data-slide="3"] { background-image: url(https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80) !important; }
+          .hero-slide[data-slide="4"] { background-image: url(https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=600&q=80) !important; }
         }
       `}</style>
     </div>
