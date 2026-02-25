@@ -27,17 +27,17 @@ const Header = () => {
       <div style={{ maxWidth: '1500px', margin: '0 auto', padding: '1.5rem 3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Link to="/" onClick={() => window.location.reload()} style={{ display: 'flex', alignItems: 'center', gap: '1.2rem', textDecoration: 'none' }} className="logo-link">
           <img src={Logo} alt="Logo" style={{ height: '60px', width: '60px', objectFit: 'cover', borderRadius: '12px', boxShadow: '0 4px 15px rgba(193, 169, 108, 0.3)', transition: 'all 0.4s ease' }} className="logo-img" />
-          <span style={{ fontSize: '1.5rem', fontWeight: '800', color: '#c1a96c', letterSpacing: '1px', textTransform: 'uppercase', transition: 'all 0.3s ease', fontFamily: 'system-ui, -apple-system, sans-serif' }} className="company-name">Continental Design Studio</span>
+          <span style={{ fontSize: '1.5rem', fontWeight: '800', color: '#c1a96c', letterSpacing: '1px', textTransform: 'uppercase', transition: 'all 0.3s ease', fontFamily: '"Playfair Display", serif' }} className="company-name">Zewo Tech Solutions</span>
         </Link>
         
         <button onClick={() => setIsOpen(!isOpen)} style={{ display: 'none', background: 'none', border: 'none', fontSize: '1.8rem', cursor: 'pointer', color: '#c1a96c' }} className="mobile-menu-btn">☰</button>
         
         <nav style={{ display: 'flex', gap: '3rem', alignItems: 'center' }} className={isOpen ? 'nav-open' : ''} onClick={() => setIsOpen(false)}>
-          <Link to="/" style={{ textDecoration: 'none', color: '#1a1a1a', fontWeight: '600', fontSize: '1.05rem', transition: 'all 0.3s', position: 'relative' }}><b>Home</b></Link>
-          <Link to="/works" style={{ textDecoration: 'none', color: '#1a1a1a', fontWeight: '600', fontSize: '1.05rem', transition: 'all 0.3s', position: 'relative' }}><b>Our Works</b></Link>
-          <Link to="/portfolio" style={{ textDecoration: 'none', color: '#1a1a1a', fontWeight: '600', fontSize: '1.05rem', transition: 'all 0.3s', position: 'relative' }}><b>Portfolio</b></Link>
-          <Link to="/contact" style={{ textDecoration: 'none', color: '#1a1a1a', fontWeight: '600', fontSize: '1.05rem', transition: 'all 0.3s', position: 'relative' }}><b>Contact</b></Link>
-          <Link to="/contact" style={{ textDecoration: 'none', color: '#fff', fontWeight: '700', backgroundColor: '#c1a96c', padding: '0.85rem 2.2rem', borderRadius: '50px', transition: 'all 0.4s ease', boxShadow: '0 6px 20px rgba(193, 169, 108, 0.4)', textTransform: 'uppercase', fontSize: '0.95rem', letterSpacing: '1.2px' }}><b>Start Project</b></Link>
+          <Link to="/" style={{ textDecoration: 'none', color: '#1a1a1a', fontWeight: '600', fontSize: '1.05rem', transition: 'all 0.3s', position: 'relative', fontFamily: '"Poppins", sans-serif' }}><b>Home</b></Link>
+          <Link to="/works" style={{ textDecoration: 'none', color: '#1a1a1a', fontWeight: '600', fontSize: '1.05rem', transition: 'all 0.3s', position: 'relative', fontFamily: '"Poppins", sans-serif' }}><b>Our Works</b></Link>
+          <Link to="/portfolio" style={{ textDecoration: 'none', color: '#1a1a1a', fontWeight: '600', fontSize: '1.05rem', transition: 'all 0.3s', position: 'relative', fontFamily: '"Poppins", sans-serif' }}><b>Portfolio</b></Link>
+          <Link to="/contact" style={{ textDecoration: 'none', color: '#1a1a1a', fontWeight: '600', fontSize: '1.05rem', transition: 'all 0.3s', position: 'relative', fontFamily: '"Poppins", sans-serif' }}><b>Contact</b></Link>
+          <Link to="/contact" style={{ textDecoration: 'none', color: '#111010', fontWeight: '700', backgroundColor: '#c1a96c', padding: '0.85rem 2.2rem', borderRadius: '50px', transition: 'all 0.4s ease', boxShadow: '0 6px 20px rgba(193, 169, 108, 0.4)', textTransform: 'uppercase', fontSize: '0.95rem', letterSpacing: '1.2px', fontFamily: '"Poppins", sans-serif' }}><b>Start Project</b></Link>
         </nav>
       </div>
       
