@@ -1,5 +1,3 @@
-import { Helmet } from 'react-helmet-async';
-
 const SEO = ({ 
   title = 'Zewo Tech Solutions - Web Development & Full Stack Solutions',
   description = 'Leading web development company specializing in full-stack solutions, e-commerce platforms, and custom web applications. Expert React, Node.js, Express, and SQL development services.',
