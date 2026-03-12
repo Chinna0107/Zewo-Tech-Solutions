@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 const SEO = ({ 
   title = 'Zewo Tech Solutions - Web Development & Full Stack Solutions',
   description = 'Leading web development company specializing in full-stack solutions, e-commerce platforms, and custom web applications. Expert React, Node.js, Express, and SQL development services.',
@@ -5,8 +7,8 @@ const SEO = ({
   url = 'https://zewo.in',
   image = 'https://zewo.in/logo.jpeg'
 }) => {
-  // Update document title and meta tags
-  if (typeof document !== 'undefined') {
+  useEffect(() => {
+    // Update document title
     document.title = title;
     
     const updateMetaTag = (name, content, isProperty = false) => {
@@ -38,7 +40,7 @@ const SEO = ({
       document.head.appendChild(canonical);
     }
     canonical.setAttribute('href', url);
-  }
+  }, [title, description, keywords, url, image]);
   
   return null;
 };
