@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import SEO from '../components/SEO';
 
 const Home = () => {
   const settings = {
@@ -26,6 +27,12 @@ const Home = () => {
 
   return (
     <div style={{ width: '100vw', overflow: 'hidden' }} className="page-enter">
+      <SEO 
+        title="Zewo Tech Solutions - Web Development & Full Stack Solutions | zewo.in"
+        description="Leading web development company in India specializing in full-stack solutions, e-commerce platforms, React, Node.js, Express, SQL development. Transform your business with our expert tech solutions."
+        keywords="web development, full stack development, tech solutions, React development, Node.js development, Express.js, SQL database, e-commerce development, custom web applications, website design, digital solutions, software development company, web design India, tech company"
+        url="https://zewo.in"
+      />
       <div style={{ width: '100vw', height: '100vh', position: 'relative', overflow: 'hidden', margin: 0, padding: 0 }}>
         <Slider {...settings}>
           {slides.map((slide, index) => (
