@@ -90,6 +90,9 @@ const Contact = () => {
                 <option>Web Development</option>
                 <option>Full Stack Development</option>
                 <option>Logo Design</option>
+                <option>UI/UX Design</option>
+                <option>Editing</option>
+                <option>Other (Specify in Message)</option>
               </select>
             </div>
 
