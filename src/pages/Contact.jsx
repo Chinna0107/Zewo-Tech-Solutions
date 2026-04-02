@@ -1,140 +1,241 @@
 import { useState } from 'react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    service: 'Architectural Planning',
-    message: ''
-  });
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '', service: 'Web Development', message: '' });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const message = `*New Project Inquiry*%0A%0A*Client Name:* ${formData.name}%0A*Contact Number:* ${formData.phone}%0A*Email:* ${formData.email}%0A*Service:* ${formData.service}%0A*Message:* ${formData.message}`;
-    window.open(`https://wa.me/918179860935?text=${message}`, '_blank');
+    const msg = `*New Project Inquiry*%0A%0A*Client Name:* ${formData.name}%0A*Contact Number:* ${formData.phone}%0A*Email:* ${formData.email}%0A*Service:* ${formData.service}%0A*Message:* ${formData.message}`;
+    window.open(`https://wa.me/918179860935?text=${msg}`, '_blank');
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%)', paddingTop: '100px', width: '100vw', margin: 0, padding: '100px 0 0 0', boxSizing: 'border-box', position: 'relative', left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw' }} className="page-enter">
-      {/* Main Container */}
-      <div style={{ padding: '4rem 5%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', maxWidth: '100%', margin: '0 auto' }} className="contact-container">
-        
-        {/* Left Side - Content */}
-        <div style={{ paddingRight: '2rem' }} className="contact-content fade-in-left">
-          <div style={{ display: 'inline-block', backgroundColor: '#c1a96c', color: '#fff', padding: '0.5rem 1.5rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '1.5rem' }}>Concierge</div>
-          <h1 style={{ fontSize: '2.8rem', fontWeight: '900', margin: '0 0 1.5rem', lineHeight: '1.1', color: '#1a1a1a', background: 'linear-gradient(135deg, #1a1a1a 0%, #c1a96c 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Let's Build the<br />Impossible.</h1>
-          <p style={{ fontSize: '1rem', color: '#555', marginBottom: '3rem', lineHeight: '1.8', fontWeight: '400' }}>Whether it's a web application or a full-stack solution, Zewo Tech Solutions is ready to bring your vision to life with technical excellence.</p>
-          
-          {/* Contact Info Grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2.5rem' }} className="contact-info-grid">
-            {/* Design Studio */}
-            <div style={{ padding: '1.5rem', backgroundColor: 'transparent', borderRadius: '12px', border: '2px solid transparent', transition: 'all 0.3s' }} onMouseOver={(e) => { e.currentTarget.style.border = '2px solid #c1a96c'; e.currentTarget.style.backgroundColor = 'rgba(193, 169, 108, 0.05)'; }} onMouseOut={(e) => { e.currentTarget.style.border = '2px solid transparent'; e.currentTarget.style.backgroundColor = 'transparent'; }}>
-              <h3 style={{ color: '#c1a96c', fontSize: '1.1rem', fontWeight: '700', marginBottom: '1rem', letterSpacing: '0.5px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span>📍</span> Office Location</h3>
-              <p style={{ color: '#555', lineHeight: '1.8', marginBottom: '1rem', fontSize: '0.9rem' }}>BTM Layout Stage One, Bengaluru, Karnataka - 560068, India</p>
-              <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" style={{ color: '#c1a96c', fontWeight: '700', textDecoration: 'none', fontSize: '0.9rem', transition: 'all 0.3s', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }} onMouseOver={(e) => e.target.style.gap = '1rem'} onMouseOut={(e) => e.target.style.gap = '0.5rem'}>Get Directions <span>→</span></a>
+    <div className="contact-page page-enter">
+
+      {/* Background blobs */}
+      <div className="blob blob-1" />
+      <div className="blob blob-2" />
+      <div className="blob blob-3" />
+
+      <div className="contact-wrapper">
+
+        {/* Left */}
+        <div className="contact-left fade-in-left">
+          <span className="badge">Get In Touch</span>
+          <h1 className="contact-title">Let's Build the<br /><span>Impossible.</span></h1>
+          <p className="contact-sub">Whether it's a web application or a full-stack solution, Zewo Tech Solutions is ready to bring your vision to life with technical excellence.</p>
+
+          <div className="info-cards">
+            <div className="glass-card info-card">
+              <div className="info-icon">📍</div>
+              <div>
+                <p className="info-label">Office Location</p>
+                <p className="info-value">BTM Layout Stage One, Bengaluru, Karnataka - 560068, India</p>
+                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="info-link">Get Directions →</a>
+              </div>
             </div>
 
-            {/* Direct Connect */}
-            <div style={{ padding: '1.5rem', backgroundColor: 'transparent', borderRadius: '12px', border: '2px solid transparent', transition: 'all 0.3s' }} onMouseOver={(e) => { e.currentTarget.style.border = '2px solid #c1a96c'; e.currentTarget.style.backgroundColor = 'rgba(193, 169, 108, 0.05)'; }} onMouseOut={(e) => { e.currentTarget.style.border = '2px solid transparent'; e.currentTarget.style.backgroundColor = 'transparent'; }}>
-              <h3 style={{ color: '#c1a96c', fontSize: '1.1rem', fontWeight: '700', marginBottom: '1rem', letterSpacing: '0.5px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span>📞</span> Direct Connect</h3>
-              <p style={{ color: '#1a1a1a', fontSize: '1.3rem', fontWeight: '700', marginBottom: '0.5rem' }}>+91 8179860935</p>
-              <p style={{ color: '#1a1a1a', fontSize: '1.1rem', fontWeight: '600', marginBottom: '0.5rem' }}>+91 9177067341</p>
-              <p style={{ color: '#1a1a1a', fontSize: '1.1rem', fontWeight: '600', marginBottom: '1.2rem' }}>+91 6281487199</p>
-              <a href="tel:+918179860935" style={{ display: 'inline-block', color: '#fff', backgroundColor: '#c1a96c', padding: '0.8rem 2rem', borderRadius: '50px', textDecoration: 'none', fontWeight: '700', transition: 'all 0.3s', boxShadow: '0 5px 15px rgba(193, 169, 108, 0.3)', fontSize: '0.9rem' }} onMouseOver={(e) => { e.target.style.backgroundColor = '#b39858'; e.target.style.transform = 'translateY(-3px)'; e.target.style.boxShadow = '0 8px 20px rgba(193, 169, 108, 0.5)'; }} onMouseOut={(e) => { e.target.style.backgroundColor = '#c1a96c'; e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 5px 15px rgba(193, 169, 108, 0.3)'; }}>Call Now</a>
-            </div>
-          </div>
-
-          {/* WhatsApp */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }} className="contact-info-grid">
-            <div style={{ padding: '1.5rem', backgroundColor: 'transparent', borderRadius: '12px', border: '2px solid transparent', transition: 'all 0.3s' }} onMouseOver={(e) => { e.currentTarget.style.border = '2px solid #25D366'; e.currentTarget.style.backgroundColor = 'rgba(37, 211, 102, 0.05)'; }} onMouseOut={(e) => { e.currentTarget.style.border = '2px solid transparent'; e.currentTarget.style.backgroundColor = 'transparent'; }}>
-              <h3 style={{ color: '#25D366', fontSize: '1.1rem', fontWeight: '700', marginBottom: '1rem', letterSpacing: '0.5px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span>💬</span> WhatsApp</h3>
-              <p style={{ color: '#1a1a1a', fontSize: '1.3rem', fontWeight: '700', marginBottom: '1.2rem' }}>+91 8179860935</p>
-              <a href="https://wa.me/918179860935" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', color: '#fff', backgroundColor: '#25D366', padding: '0.8rem 2rem', borderRadius: '50px', textDecoration: 'none', fontWeight: '700', transition: 'all 0.3s', boxShadow: '0 5px 15px rgba(37, 211, 102, 0.3)', fontSize: '0.9rem' }} onMouseOver={(e) => { e.target.style.backgroundColor = '#20BA5A'; e.target.style.transform = 'translateY(-3px)'; e.target.style.boxShadow = '0 8px 20px rgba(37, 211, 102, 0.5)'; }} onMouseOut={(e) => { e.target.style.backgroundColor = '#25D366'; e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 5px 15px rgba(37, 211, 102, 0.3)'; }}>Start Chat</a>
+            <div className="glass-card info-card">
+              <div className="info-icon">📞</div>
+              <div>
+                <p className="info-label">Direct Connect</p>
+                <p className="info-value">+91 8179860935</p>
+                <p className="info-value">+91 9177067341</p>
+                <p className="info-value" style={{ marginBottom: '1rem' }}>+91 6281487199</p>
+                <a href="tel:+918179860935" className="glass-btn-sm">Call Now</a>
+              </div>
             </div>
 
-            {/* Working Hours */}
-            <div style={{ padding: '1.5rem', backgroundColor: 'transparent', borderRadius: '12px', border: '2px solid transparent', transition: 'all 0.3s', display: 'flex', alignItems: 'center' }} onMouseOver={(e) => { e.currentTarget.style.border = '2px solid #c1a96c'; e.currentTarget.style.backgroundColor = 'rgba(193, 169, 108, 0.05)'; }} onMouseOut={(e) => { e.currentTarget.style.border = '2px solid transparent'; e.currentTarget.style.backgroundColor = 'transparent'; }}>
-              
-              <p style={{ color: '#1a1a1a', fontSize: '0.95rem', fontWeight: '600', margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span>🕐</span> Mon - Sat: 09:00 AM — 06:00 PM</p>
+            <div className="glass-card info-card whatsapp-card">
+              <div className="info-icon">💬</div>
+              <div>
+                <p className="info-label" style={{ color: '#25D366' }}>WhatsApp</p>
+                <p className="info-value">+91 8179860935</p>
+                <a href="https://wa.me/918179860935" target="_blank" rel="noopener noreferrer" className="glass-btn-sm wa-btn">Start Chat</a>
+              </div>
+            </div>
+
+            <div className="glass-card info-card">
+              <div className="info-icon">🕐</div>
+              <div>
+                <p className="info-label">Working Hours</p>
+                <p className="info-value">Mon – Sat: 09:00 AM – 06:00 PM</p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Right Side - Form */}
-        <div style={{ backgroundColor: '#fff', padding: '3.5rem', borderRadius: '25px', boxShadow: '0 20px 60px rgba(0,0,0,0.12)', height: 'fit-content', position: 'sticky', top: '120px', border: '1px solid rgba(193, 169, 108, 0.1)' }} className="contact-form fade-in-right">
-          <h2 style={{ fontSize: '1.8rem', fontWeight: '900', color: '#1a1a1a', marginBottom: '0.5rem' }}>Project Inquiry</h2>
-          <p style={{ color: '#666', marginBottom: '2.5rem', fontSize: '0.95rem' }}>Tell us about your project requirements.</p>
-          
-          <form onSubmit={handleSubmit}>
-            <div style={{ marginBottom: '1.5rem' }}>
-              <label style={{ display: 'block', color: '#1a1a1a', fontWeight: '600', marginBottom: '0.5rem', fontSize: '0.95rem' }}>Client Name</label>
-              <input type="text" placeholder="e.g. Varun Tej" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} style={{ width: '100%', padding: '0.9rem', border: '2px solid #e0e0e0', borderRadius: '10px', fontSize: '1rem', transition: 'all 0.3s', outline: 'none' }} onFocus={(e) => e.target.style.borderColor = '#c1a96c'} onBlur={(e) => e.target.style.borderColor = '#e0e0e0'} required />
-            </div>
+        {/* Right - Form */}
+        <div className="glass-form-wrap fade-in-right">
+          <h2 className="form-title">Project Inquiry</h2>
+          <p className="form-sub">Tell us about your project requirements.</p>
 
-            <div style={{ marginBottom: '1.5rem' }}>
-              <label style={{ display: 'block', color: '#1a1a1a', fontWeight: '600', marginBottom: '0.5rem', fontSize: '0.95rem' }}>Contact Number</label>
-              <input type="tel" placeholder="+91 81216 66611" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} style={{ width: '100%', padding: '0.9rem', border: '2px solid #e0e0e0', borderRadius: '10px', fontSize: '1rem', transition: 'all 0.3s', outline: 'none' }} onFocus={(e) => e.target.style.borderColor = '#c1a96c'} onBlur={(e) => e.target.style.borderColor = '#e0e0e0'} required />
-            </div>
+          <form onSubmit={handleSubmit} className="contact-form">
+            {[
+              { label: 'Client Name', key: 'name', type: 'text', placeholder: 'e.g. Varun Tej' },
+              { label: 'Contact Number', key: 'phone', type: 'tel', placeholder: '+91 81216 66611' },
+              { label: 'Email Address', key: 'email', type: 'email', placeholder: 'your@email.com' },
+            ].map(({ label, key, type, placeholder }) => (
+              <div key={key} className="form-group">
+                <label className="form-label">{label}</label>
+                <input type={type} placeholder={placeholder} value={formData[key]}
+                  onChange={(e) => setFormData({ ...formData, [key]: e.target.value })}
+                  className="glass-input" required />
+              </div>
+            ))}
 
-            <div style={{ marginBottom: '1.5rem' }}>
-              <label style={{ display: 'block', color: '#1a1a1a', fontWeight: '600', marginBottom: '0.5rem', fontSize: '0.95rem' }}>Email Address</label>
-              <input type="email" placeholder="your@email.com" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} style={{ width: '100%', padding: '0.9rem', border: '2px solid #e0e0e0', borderRadius: '10px', fontSize: '1rem', transition: 'all 0.3s', outline: 'none' }} onFocus={(e) => e.target.style.borderColor = '#c1a96c'} onBlur={(e) => e.target.style.borderColor = '#e0e0e0'} required />
-            </div>
-
-            <div style={{ marginBottom: '1.5rem' }}>
-              <label style={{ display: 'block', color: '#1a1a1a', fontWeight: '600', marginBottom: '0.5rem', fontSize: '0.95rem' }}>Scope of service</label>
-              <select value={formData.service} onChange={(e) => setFormData({...formData, service: e.target.value})} style={{ width: '100%', padding: '0.9rem', border: '2px solid #e0e0e0', borderRadius: '10px', fontSize: '1rem', transition: 'all 0.3s', outline: 'none', backgroundColor: '#fff' }} onFocus={(e) => e.target.style.borderColor = '#c1a96c'} onBlur={(e) => e.target.style.borderColor = '#e0e0e0'}>
+            <div className="form-group">
+              <label className="form-label">Scope of Service</label>
+              <select value={formData.service} onChange={(e) => setFormData({ ...formData, service: e.target.value })} className="glass-input">
                 <option>Web Development</option>
                 <option>Full Stack Development</option>
                 <option>Logo Design</option>
               </select>
             </div>
 
-            <div style={{ marginBottom: '2rem' }}>
-              <label style={{ display: 'block', color: '#1a1a1a', fontWeight: '600', marginBottom: '0.5rem', fontSize: '0.95rem' }}>Message Context</label>
-              <textarea placeholder="Describe the scale and vision of your project..." value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} rows="4" style={{ width: '100%', padding: '0.9rem', border: '2px solid #e0e0e0', borderRadius: '10px', fontSize: '1rem', transition: 'all 0.3s', outline: 'none', resize: 'vertical' }} onFocus={(e) => e.target.style.borderColor = '#c1a96c'} onBlur={(e) => e.target.style.borderColor = '#e0e0e0'} required></textarea>
+            <div className="form-group">
+              <label className="form-label">Message</label>
+              <textarea placeholder="Describe the scale and vision of your project..." value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                rows="4" className="glass-input" required />
             </div>
 
-            <button type="submit" style={{ width: '100%', padding: '1rem', backgroundColor: '#c1a96c', color: '#fff', border: 'none', borderRadius: '50px', fontSize: '1rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', cursor: 'pointer', transition: 'all 0.4s', boxShadow: '0 8px 25px rgba(193, 169, 108, 0.4)' }} onMouseOver={(e) => { e.target.style.backgroundColor = '#b39858'; e.target.style.transform = 'translateY(-3px)'; e.target.style.boxShadow = '0 12px 35px rgba(193, 169, 108, 0.6)'; }} onMouseOut={(e) => { e.target.style.backgroundColor = '#c1a96c'; e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 8px 25px rgba(193, 169, 108, 0.4)'; }}>Transmit Request</button>
+            <button type="submit" className="submit-btn">Send via WhatsApp ↗</button>
           </form>
         </div>
       </div>
 
       <style>{`
-        @media (max-width: 968px) {
-          .contact-container {
-            grid-template-columns: 1fr !important;
-            display: flex !important;
-            flex-direction: column-reverse !important;
-          }
-          .contact-form {
-            position: relative !important;
-            top: 0 !important;
-            order: -1 !important;
-          }
-          .contact-content {
-            padding-right: 0 !important;
-            order: 1 !important;
-          }
-          .contact-info-grid {
-            grid-template-columns: 1fr !important;
-            gap: 1.5rem !important;
-          }
+        .contact-page {
+          min-height: 100vh;
+          padding-top: 100px;
+          background: linear-gradient(135deg, #e1fafa 0%, #f0f8ff 40%, #e8f4fd 100%);
+          position: relative; overflow: hidden;
         }
-        @media (max-width: 768px) {
-          div[style*="padding: '4rem 5%'"] {
-            padding: 2rem 5% !important;
-          }
-          div[style*="paddingTop: '100px'"] {
-            padding-top: 80px !important;
-          }
-          h1 {
-            font-size: 2rem !important;
-          }
-          .contact-form {
-            padding: 2rem !important;
-          }
+        .blob {
+          position: absolute; border-radius: 50%;
+          filter: blur(80px); opacity: 0.35; pointer-events: none;
+        }
+        .blob-1 { width: 500px; height: 500px; background: radial-gradient(circle, #006496, transparent); top: -100px; right: -100px; }
+        .blob-2 { width: 400px; height: 400px; background: radial-gradient(circle, #96c8e1, transparent); bottom: 100px; left: -100px; }
+        .blob-3 { width: 300px; height: 300px; background: radial-gradient(circle, #19647d, transparent); top: 50%; left: 40%; }
+
+        .contact-wrapper {
+          max-width: 1300px; margin: 0 auto;
+          padding: 3rem 5% 5rem;
+          display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+          position: relative; z-index: 1;
+        }
+
+        .badge {
+          display: inline-block;
+          background: rgba(0,100,150,0.12);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(0,100,150,0.25);
+          color: #006496; padding: 0.5rem 1.5rem;
+          border-radius: 50px; font-size: 0.8rem;
+          font-weight: 700; letter-spacing: 2px;
+          text-transform: uppercase; margin-bottom: 1.5rem;
+        }
+        .contact-title {
+          font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900;
+          color: #1a1a1a; line-height: 1.1; margin-bottom: 1.2rem;
+        }
+        .contact-title span { color: #006496; }
+        .contact-sub { font-size: 1rem; color: #555; line-height: 1.8; margin-bottom: 2.5rem; }
+
+        .info-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+
+        .glass-card {
+          background: rgba(255,255,255,0.55);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(255,255,255,0.7);
+          box-shadow: 0 8px 32px rgba(0,100,150,0.1), inset 0 1px 0 rgba(255,255,255,0.8);
+          border-radius: 20px;
+          transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 16px 48px rgba(0,100,150,0.18), inset 0 1px 0 rgba(255,255,255,0.9);
+          border-color: rgba(0,100,150,0.2);
+        }
+        .info-card { padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; }
+        .info-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .info-label { font-size: 0.75rem; font-weight: 700; color: #006496; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.5rem; }
+        .info-value { font-size: 0.9rem; color: #333; font-weight: 500; margin-bottom: 0.3rem; line-height: 1.6; }
+        .info-link { color: #006496; font-size: 0.85rem; font-weight: 700; text-decoration: none; transition: gap 0.3s; }
+        .info-link:hover { text-decoration: underline; }
+
+        .glass-btn-sm {
+          display: inline-block; padding: 0.5rem 1.4rem;
+          background: linear-gradient(135deg, #006496, #19647d);
+          color: #fff; border-radius: 50px; font-size: 0.8rem;
+          font-weight: 700; text-decoration: none;
+          box-shadow: 0 4px 15px rgba(0,100,150,0.3);
+          border: 1px solid rgba(255,255,255,0.2);
+          transition: all 0.3s ease;
+        }
+        .glass-btn-sm:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,100,150,0.5); }
+        .wa-btn { background: linear-gradient(135deg, #25D366, #20BA5A); box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
+        .wa-btn:hover { box-shadow: 0 8px 20px rgba(37,211,102,0.5); }
+
+        /* Form */
+        .glass-form-wrap {
+          background: rgba(255,255,255,0.6);
+          backdrop-filter: blur(30px);
+          -webkit-backdrop-filter: blur(30px);
+          border: 1px solid rgba(255,255,255,0.8);
+          box-shadow: 0 20px 60px rgba(0,100,150,0.12), inset 0 1px 0 rgba(255,255,255,0.9);
+          border-radius: 28px; padding: 3rem;
+          position: sticky; top: 120px;
+        }
+        .form-title { font-size: 1.8rem; font-weight: 900; color: #1a1a1a; margin-bottom: 0.4rem; }
+        .form-sub { color: #666; font-size: 0.9rem; margin-bottom: 2rem; }
+        .form-group { margin-bottom: 1.4rem; }
+        .form-label { display: block; color: #1a1a1a; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .glass-input {
+          width: 100%; padding: 0.85rem 1.1rem;
+          background: rgba(255,255,255,0.7);
+          backdrop-filter: blur(10px);
+          border: 1.5px solid rgba(0,100,150,0.15);
+          border-radius: 12px; font-size: 0.95rem;
+          font-family: 'Poppins', sans-serif;
+          color: #1a1a1a; outline: none;
+          transition: all 0.3s ease;
+          box-sizing: border-box;
+          box-shadow: inset 0 2px 8px rgba(0,100,150,0.05);
+        }
+        .glass-input:focus {
+          border-color: #006496;
+          background: rgba(255,255,255,0.9);
+          box-shadow: 0 0 0 3px rgba(0,100,150,0.1), inset 0 2px 8px rgba(0,100,150,0.05);
+        }
+        textarea.glass-input { resize: vertical; min-height: 110px; }
+
+        .submit-btn {
+          width: 100%; padding: 1rem;
+          background: linear-gradient(135deg, #006496 0%, #19647d 100%);
+          color: #fff; border: none; border-radius: 50px;
+          font-size: 1rem; font-weight: 700;
+          text-transform: uppercase; letter-spacing: 2px;
+          cursor: pointer;
+          box-shadow: 0 8px 30px rgba(0,100,150,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+          transition: all 0.3s ease;
+        }
+        .submit-btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 14px 40px rgba(0,100,150,0.55), inset 0 1px 0 rgba(255,255,255,0.3);
+        }
+
+        @media (max-width: 968px) {
+          .contact-wrapper { grid-template-columns: 1fr !important; gap: 2.5rem; }
+          .glass-form-wrap { position: relative !important; top: 0 !important; order: -1; }
+          .info-cards { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 640px) {
+          .glass-form-wrap { padding: 2rem 1.5rem !important; }
+          .contact-wrapper { padding: 2rem 5% 4rem; }
         }
       `}</style>
     </div>

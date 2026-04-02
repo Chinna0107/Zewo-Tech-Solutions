@@ -78,6 +78,51 @@ const ProjectDetail = () => {
       technologies: ['React', 'Vite', 'WhatsApp API', 'Responsive Design', 'Image Optimization'],
       img: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80',
       link: '#'
+    },
+    'promoads': {
+      name: 'PromoAds',
+      category: 'Advertising',
+      tech: 'Frontend Website',
+      year: '2025',
+      client: 'PromoAds',
+      duration: '1.5 months',
+      desc: 'Digital advertising platform showcasing promotional services and ad campaign solutions for businesses.',
+      challenge: 'Creating a compelling advertising platform website that effectively communicates services and attracts business clients.',
+      solution: 'Built a modern, visually engaging frontend website with React and Vite, featuring service showcases, campaign portfolio, and WhatsApp-integrated contact for quick client onboarding.',
+      features: ['Service showcase', 'Campaign portfolio', 'WhatsApp integration', 'Client testimonials', 'Pricing plans', 'Contact system'],
+      technologies: ['React', 'Vite', 'WhatsApp API', 'Responsive Design'],
+      img: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=1200&q=80',
+      link: 'https://promoads.co.in'
+    },
+    'aluris-global-trade': {
+      name: 'Aluris Global Trade',
+      category: 'Corporate Website',
+      tech: 'Frontend Website',
+      year: '2025',
+      client: 'Aluris Global Trade',
+      duration: '2 months',
+      desc: 'Professional global trade company website with product catalog and international business information.',
+      challenge: 'Building a professional corporate website that establishes credibility in international trade and facilitates global business inquiries.',
+      solution: 'Designed a clean, professional frontend website with React and Vite, featuring product catalog, trade information, company profile, and WhatsApp-integrated contact for international clients.',
+      features: ['Product catalog', 'Trade information', 'Company profile', 'WhatsApp integration', 'International inquiry system', 'Responsive Design'],
+      technologies: ['React', 'Vite', 'WhatsApp API', 'Responsive Design'],
+      img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
+      link: 'https://alurisglobaltrade.com'
+    },
+    'alphazone-fashions': {
+      name: 'The Alphazone Fashions',
+      category: 'E-Commerce',
+      tech: 'Frontend Website',
+      year: '2025',
+      client: 'The Alphazone Fashions',
+      duration: '1.5 months',
+      desc: 'Modern fashion website showcasing clothing collections with WhatsApp-integrated ordering system.',
+      challenge: 'Creating an attractive fashion website that showcases collections effectively and drives customer engagement and orders.',
+      solution: 'Built a stylish, modern frontend website with React and Vite, featuring collection galleries, product showcases, and WhatsApp-integrated ordering for seamless customer experience.',
+      features: ['Collection showcase', 'Product gallery', 'WhatsApp ordering', 'Size guide', 'New arrivals', 'Contact system'],
+      technologies: ['React', 'Vite', 'WhatsApp API', 'Responsive Design'],
+      img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80',
+      link: 'https://thealphazone.in'
     }
   };
 
@@ -88,12 +133,12 @@ const ProjectDetail = () => {
   }
 
   return (
-    <div style={{ minHeight: '100vh', paddingTop: '100px' }} className="page-enter">
+    <div style={{ minHeight: '100vh', paddingTop: '100px', background: 'linear-gradient(135deg, #f0f8ff 0%, #e1fafa 100%)' }} className="page-enter">
       {/* Hero Section */}
       <div style={{ width: '100vw', height: '60vh', backgroundImage: `url(${project.img})`, backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative', left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw' }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0, 0, 0, 0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <div style={{ textAlign: 'center', color: '#fff', padding: '0 5%' }}>
-            <p style={{ color: '#c1a96c', fontSize: '1rem', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '1rem' }}>{project.category}</p>
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(135deg, rgba(0,20,40,0.75) 0%, rgba(0,50,80,0.5) 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ textAlign: 'center', color: '#fff', padding: '2.5rem 3rem', background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '24px', boxShadow: '0 20px 60px rgba(0,0,0,0.3)' }}>
+            <p style={{ color: '#006496', fontSize: '1rem', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '1rem' }}>{project.category}</p>
             <h1 style={{ fontSize: '4rem', fontWeight: '900', marginBottom: '1rem', color: '#fff' }}>{project.name}</h1>
             <p style={{ fontSize: '1.3rem', color: '#f0f0f0' }}>{project.tech} • {project.year}</p>
           </div>
@@ -107,15 +152,15 @@ const ProjectDetail = () => {
             <h2 style={{ fontSize: '2.5rem', fontWeight: '800', color: '#1a1a1a', marginBottom: '1.5rem' }}>Project Overview</h2>
             <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#555', marginBottom: '2rem' }}>{project.desc}</p>
             
-            <h3 style={{ fontSize: '1.8rem', fontWeight: '700', color: '#c1a96c', marginBottom: '1rem' }}>The Challenge</h3>
+            <h3 style={{ fontSize: '1.8rem', fontWeight: '700', color: '#006496', marginBottom: '1rem' }}>The Challenge</h3>
             <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#555', marginBottom: '2rem' }}>{project.challenge}</p>
             
-            <h3 style={{ fontSize: '1.8rem', fontWeight: '700', color: '#c1a96c', marginBottom: '1rem' }}>Our Solution</h3>
+            <h3 style={{ fontSize: '1.8rem', fontWeight: '700', color: '#006496', marginBottom: '1rem' }}>Our Solution</h3>
             <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#555' }}>{project.solution}</p>
           </div>
           
           <div>
-            <div style={{ backgroundColor: '#f9f9f9', padding: '2rem', borderRadius: '15px', marginBottom: '2rem' }}>
+            <div style={{ background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(20px)', padding: '2rem', borderRadius: '15px', marginBottom: '2rem', border: '1px solid rgba(0,100,150,0.15)', boxShadow: '0 8px 32px rgba(0,100,150,0.08)' }}>
               <h3 style={{ fontSize: '1.3rem', fontWeight: '700', color: '#1a1a1a', marginBottom: '1.5rem' }}>Project Details</h3>
               <div style={{ marginBottom: '1rem' }}>
                 <p style={{ fontSize: '0.9rem', color: '#999', marginBottom: '0.3rem' }}>Client</p>
@@ -138,7 +183,7 @@ const ProjectDetail = () => {
           <h3 style={{ fontSize: '2rem', fontWeight: '800', color: '#1a1a1a', marginBottom: '2rem' }}>Key Features</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
             {project.features.map((feature, index) => (
-              <div key={index} style={{ padding: '1.5rem', backgroundColor: '#f9f9f9', borderRadius: '10px', borderLeft: '4px solid #c1a96c' }}>
+              <div key={index} style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(10px)', borderRadius: '10px', borderLeft: '4px solid #006496', border: '1px solid rgba(0,100,150,0.15)' }}>
                 <p style={{ fontSize: '1rem', fontWeight: '600', color: '#1a1a1a' }}>{feature}</p>
               </div>
             ))}
@@ -150,21 +195,21 @@ const ProjectDetail = () => {
           <h3 style={{ fontSize: '2rem', fontWeight: '800', color: '#1a1a1a', marginBottom: '2rem' }}>Technologies Used</h3>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             {project.technologies.map((tech, index) => (
-              <span key={index} style={{ padding: '0.7rem 1.5rem', backgroundColor: '#c1a96c', color: '#fff', borderRadius: '50px', fontSize: '0.95rem', fontWeight: '600' }}>{tech}</span>
+              <span key={index} style={{ padding: '0.7rem 1.5rem', backgroundColor: '#006496', color: '#fff', borderRadius: '50px', fontSize: '0.95rem', fontWeight: '600' }}>{tech}</span>
             ))}
           </div>
         </div>
 
         {/* CTA */}
-        <div style={{ textAlign: 'center', padding: '3rem', backgroundColor: '#f9f9f9', borderRadius: '15px' }}>
+        <div style={{ textAlign: 'center', padding: '3rem', background: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(20px)', borderRadius: '20px', border: '1px solid rgba(0,100,150,0.15)', boxShadow: '0 8px 32px rgba(0,100,150,0.1)' }}>
           <h3 style={{ fontSize: '2rem', fontWeight: '800', color: '#1a1a1a', marginBottom: '1rem' }}>Interested in a similar project?</h3>
           <p style={{ fontSize: '1.1rem', color: '#666', marginBottom: '2rem' }}>Let's discuss how we can help bring your vision to life.</p>
           <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/contact" style={{ padding: '1rem 2.5rem', backgroundColor: '#c1a96c', color: '#fff', textDecoration: 'none', borderRadius: '50px', fontSize: '1rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px' }}>Get In Touch</Link>
+            <Link to="/contact" style={{ padding: '1rem 2.5rem', backgroundColor: '#006496', color: '#fff', textDecoration: 'none', borderRadius: '50px', fontSize: '1rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px' }}>Get In Touch</Link>
             {project.link && project.link !== '#' && (
-              <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ padding: '1rem 2.5rem', backgroundColor: 'transparent', color: '#c1a96c', textDecoration: 'none', borderRadius: '50px', fontSize: '1rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px', border: '2px solid #c1a96c' }}>Visit Live Site</a>
+              <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ padding: '1rem 2.5rem', backgroundColor: 'transparent', color: '#006496', textDecoration: 'none', borderRadius: '50px', fontSize: '1rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px', border: '2px solid #006496' }}>Visit Live Site</a>
             )}
-            <Link to="/works" style={{ padding: '1rem 2.5rem', backgroundColor: 'transparent', color: '#c1a96c', textDecoration: 'none', borderRadius: '50px', fontSize: '1rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px', border: '2px solid #c1a96c' }}>View More Projects</Link>
+            <Link to="/works" style={{ padding: '1rem 2.5rem', backgroundColor: 'transparent', color: '#006496', textDecoration: 'none', borderRadius: '50px', fontSize: '1rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px', border: '2px solid #006496' }}>View More Projects</Link>
           </div>
         </div>
       </div>

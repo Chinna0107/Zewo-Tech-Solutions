@@ -1,7 +1,14 @@
 import { useState, useRef } from 'react';
 import Logo from '../assets/Logo.jpeg';
 
+const CREDENTIALS = { email: 'zewotechsol@gmail.com', password: 'adminhemanth@2005' };
+
 const Bill = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+  const [loginError, setLoginError] = useState('');
+  const [showPass, setShowPass] = useState(false);
   const [clientName, setClientName] = useState('');
   const [clientEmail, setClientEmail] = useState('');
   const [clientPhone, setClientPhone] = useState('');
@@ -22,6 +29,49 @@ const Bill = () => {
   const total = items.reduce((sum, item) => sum + (parseFloat(item.price) || 0), 0);
 
   const handlePrint = () => window.print();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (loginEmail === CREDENTIALS.email && loginPassword === CREDENTIALS.password) {
+      setLoggedIn(true);
+      setLoginError('');
+    } else {
+      setLoginError('Invalid email or password.');
+    }
+  };
+
+  if (!loggedIn) return (
+    <div style={{ minHeight: '100vh', backgroundColor: '#1a1a1a', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: '"Poppins", sans-serif' }}>
+      <div style={{ backgroundColor: '#fff', borderRadius: '20px', padding: '3rem', width: '100%', maxWidth: '420px', boxShadow: '0 20px 60px rgba(0,0,0,0.4)' }}>
+        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+          <img src={Logo} alt="Logo" style={{ height: '65px', width: '65px', objectFit: 'cover', borderRadius: '12px', border: '2px solid #c1a96c', marginBottom: '1rem' }} />
+          <h1 style={{ fontFamily: '"Playfair Display", serif', color: '#1a1a1a', fontSize: '1.5rem', margin: '0 0 0.3rem' }}>Zewo Tech Solutions</h1>
+          <p style={{ color: '#999', fontSize: '0.8rem', margin: 0, fontStyle: 'italic' }}>Bill Portal — Admin Access</p>
+        </div>
+        <div style={{ height: '3px', background: 'linear-gradient(90deg, #c1a96c, #e8d5a3, #c1a96c)', borderRadius: '2px', marginBottom: '2rem' }} />
+        <form onSubmit={handleLogin}>
+          <div style={{ marginBottom: '1.2rem' }}>
+            <label style={{ fontSize: '0.75rem', fontWeight: '700', color: '#666', textTransform: 'uppercase', letterSpacing: '1px', display: 'block', marginBottom: '0.4rem' }}>Email</label>
+            <input type="email" value={loginEmail} onChange={e => setLoginEmail(e.target.value)} placeholder="Enter email" required
+              style={{ width: '100%', padding: '0.75rem 1rem', border: '1.5px solid #e0e0e0', borderRadius: '10px', fontSize: '0.95rem', outline: 'none', boxSizing: 'border-box', fontFamily: '"Poppins", sans-serif', transition: 'border 0.2s' }}
+              onFocus={e => e.target.style.borderColor = '#c1a96c'} onBlur={e => e.target.style.borderColor = '#e0e0e0'} />
+          </div>
+          <div style={{ marginBottom: '1.5rem' }}>
+            <label style={{ fontSize: '0.75rem', fontWeight: '700', color: '#666', textTransform: 'uppercase', letterSpacing: '1px', display: 'block', marginBottom: '0.4rem' }}>Password</label>
+            <div style={{ position: 'relative' }}>
+              <input type={showPass ? 'text' : 'password'} value={loginPassword} onChange={e => setLoginPassword(e.target.value)} placeholder="Enter password" required
+                style={{ width: '100%', padding: '0.75rem 2.8rem 0.75rem 1rem', border: '1.5px solid #e0e0e0', borderRadius: '10px', fontSize: '0.95rem', outline: 'none', boxSizing: 'border-box', fontFamily: '"Poppins", sans-serif', transition: 'border 0.2s' }}
+                onFocus={e => e.target.style.borderColor = '#c1a96c'} onBlur={e => e.target.style.borderColor = '#e0e0e0'} />
+              <span onClick={() => setShowPass(!showPass)} style={{ position: 'absolute', right: '0.9rem', top: '50%', transform: 'translateY(-50%)', cursor: 'pointer', fontSize: '1rem', color: '#999' }}>{showPass ? '🙈' : '👁️'}</span>
+            </div>
+          </div>
+          {loginError && <p style={{ color: '#e00', fontSize: '0.85rem', margin: '-0.8rem 0 1rem', textAlign: 'center' }}>{loginError}</p>}
+          <button type="submit" style={{ width: '100%', padding: '0.9rem', backgroundColor: '#1a1a1a', color: '#fff', border: 'none', borderRadius: '10px', fontSize: '1rem', fontWeight: '700', cursor: 'pointer', fontFamily: '"Poppins", sans-serif', letterSpacing: '1px' }}>Login</button>
+        </form>
+      </div>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@400;600;700&display=swap');`}</style>
+    </div>
+  );
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#f5f5f5', padding: '2rem', fontFamily: '"Poppins", sans-serif' }}>
