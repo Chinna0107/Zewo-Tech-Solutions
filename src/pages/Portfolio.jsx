@@ -40,8 +40,8 @@ const Portfolio = () => {
 
   const team = [
     { name: 'Hemanth Kancharla', role: 'Founder & CEO', img: HemanthImg, desc: 'Visionary leader and full-stack developer with expertise in building scalable web applications. Founded Zewo with a mission to deliver cutting-edge digital solutions that drive business growth.', reverse: false },
-    { name: 'Jagadeesh', role: 'Co-Founder & Frontend Lead', img: JagadeeshImg, desc: 'Expert in frontend architecture and UI/UX development. Jagadeesh crafts pixel-perfect, responsive interfaces that deliver exceptional user experiences across all devices.', reverse: true },
-    { name: 'Pavan Kumar Tanikonda', role: 'Co-Founder & Business Strategist', img: PavanImg, desc: 'Strategic thinker focused on business development and client relationships. Pavan drives growth initiatives and ensures exceptional client satisfaction throughout every project.', reverse: false },
+    { name: 'Jagadeesh', role: 'Core Team', img: JagadeeshImg, desc: 'Expert in frontend architecture and UI/UX development. Jagadeesh crafts pixel-perfect, responsive interfaces that deliver exceptional user experiences across all devices.', reverse: true },
+    { name: 'Pavan Kumar Tanikonda', role: 'Core Team', img: PavanImg, desc: 'Strategic thinker focused on business development and client relationships. Pavan drives growth initiatives and ensures exceptional client satisfaction throughout every project.', reverse: false },
     { name: 'Bogala Guru Gangadhar Reddy', role: 'Core Team', img: Guru, desc: 'Dedicated core team member contributing to the development and delivery of high-quality digital solutions. Brings strong technical skills and commitment to every project at Zewo.', reverse: true },
   ];
 
