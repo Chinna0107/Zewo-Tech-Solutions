@@ -35,9 +35,9 @@ const Header = () => {
         </button>
 
         <nav className={`glass-nav ${isOpen ? 'nav-open' : ''}`} onClick={() => setIsOpen(false)}>
-          {['/', '/works', '/portfolio', '/contact'].map((path, i) => (
+          {['/', '/works', '/portfolio', '/careers', '/contact'].map((path, i) => (
             <Link key={path} to={path} className="nav-link">
-              {['Home', 'Our Works', 'Portfolio', 'Contact'][i]}
+              {['Home', 'Our Works', 'Portfolio', 'Careers', 'Contact'][i]}
             </Link>
           ))}
           <Link to="/contact" className="nav-cta">Start Project</Link>

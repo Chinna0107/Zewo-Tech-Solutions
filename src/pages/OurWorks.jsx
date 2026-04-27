@@ -1,10 +1,25 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+const useTypewriter = (text, speed = 50) => {
+  const [displayed, setDisplayed] = useState('');
+  useEffect(() => {
+    setDisplayed('');
+    let i = 0;
+    const t = setInterval(() => {
+      setDisplayed(text.slice(0, ++i));
+      if (i >= text.length) clearInterval(t);
+    }, speed);
+    return () => clearInterval(t);
+  }, [text, speed]);
+  return displayed;
+};
 
 const OurWorks = () => {
   const projects = [
     { id: 1, slug: 'chinnamart', category: 'E-Commerce', name: 'Chinnamart', location: 'Full Stack E-Commerce', year: '2024', desc: 'Complete e-commerce platform with product management, shopping cart, and secure payment integration.', style: 'Modern E-Commerce', scope: 'Full Stack Development', img: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80', link: 'https://chinnamart.in' },
     { id: 2, slug: 'blood-donation-platform', category: 'Web Application', name: 'Blood Donation Platform', location: 'Full Stack Application', year: '2024', desc: 'Blood donation management system connecting donors with recipients, featuring real-time availability and request management.', style: 'Healthcare Solution', scope: 'Full Stack Development', img: 'https://images.unsplash.com/photo-1615461066159-fea0960485d5?w=800&q=80', link: 'https://hk-blood-donation.vercel.app' },
-    { id: 3, slug: 'dad-pacs-fertilizers', category: 'Business Website', name: 'BADEVARIPALEM PACS Fertilizers', location: 'Full Stack Website', year: '2024', desc: 'Professional website for fertilizer company showcasing products, services, and agricultural solutions.', style: 'Corporate Website', scope: 'Full Stack Development', img: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80', link: 'https://dad-pacs.vercel.app' },
+    { id: 3, slug: 'badevaripalem-pacs-fertilizers', category: 'Business Website', name: 'BADEVARIPALEM PACS Fertilizers', location: 'Full Stack Website', year: '2024', desc: 'Professional website for fertilizer company showcasing products, services, and agricultural solutions.', style: 'Corporate Website', scope: 'Full Stack Development', img: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80', link: 'https://dad-pacs.vercel.app' },
     { id: 4, slug: 'tobacco-export-company', category: 'Corporate Website', name: 'Tobacco Export Company', location: 'Frontend Website', year: '2024', desc: 'Export-focused website for tobacco company with product catalog and WhatsApp-integrated contact system.', style: 'Export Business', scope: 'Frontend Development', img: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80', link: '#' },
     { id: 5, slug: 'infrastructure-projects', category: 'Infrastructure', name: 'Infrastructure Projects', location: 'Frontend Website', year: '2024', desc: 'Comprehensive infrastructure project showcase website with portfolio and WhatsApp-integrated contact.', style: 'Project Showcase', scope: 'Frontend Development', img: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80', link: '#' },
     { id: 6, slug: 'promoads', category: 'Advertising', name: 'PromoAds', location: 'Frontend Website', year: '2025', desc: 'Digital advertising platform showcasing promotional services and ad campaign solutions.', style: 'Advertising Platform', scope: 'Frontend Development', img: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80', link: 'https://promoads.co.in' },
@@ -12,16 +27,21 @@ const OurWorks = () => {
     { id: 8, slug: 'alphazone-fashions', category: 'E-Commerce', name: 'The Alphazone Fashions', location: 'Frontend Website', year: '2025', desc: 'Modern fashion e-commerce website showcasing clothing collections with WhatsApp-integrated ordering.', style: 'Fashion E-Commerce', scope: 'Frontend Development', img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80', link: 'https://thealphazone.in' },
   ];
 
+  const title = useTypewriter('Building Digital Solutions.', 45);
+  const sub = useTypewriter('We transform ideas into powerful web applications and memorable brand identities.', 18);
+
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#fff' }} className="page-enter">
 
       {/* Hero */}
       <div style={{ width: '100vw', height: '100vh', backgroundImage: 'url(https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=80)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hero-works">
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(0,20,40,0.75) 0%, rgba(0,50,80,0.5) 100%)' }} />
-        <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', color: '#fff', maxWidth: '800px', background: 'rgba(255,255,255,0.07)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '32px', padding: '3.5rem 4rem', boxShadow: '0 20px 60px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2)' }} className="fade-in-up">
-          <p style={{ color: '#006496', fontSize: '0.9rem', fontWeight: '700', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '1.5rem' }}>Our Legacy</p>
-          <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)', fontWeight: '900', marginBottom: '1.5rem', lineHeight: '1.05', background: 'linear-gradient(135deg, #fff 0%, #006496 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Building<br />Digital Solutions.</h1>
-          <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.4rem)', lineHeight: '1.8', marginBottom: '2.5rem', color: '#f0f0f0', fontWeight: '400' }}>We transform ideas into powerful web applications and memorable brand identities.</p>
+        <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', color: '#fff', maxWidth: '800px', padding: '0 2rem' }} className="fade-in-up">
+          <p style={{ color: '#96c8e1', fontSize: '0.9rem', fontWeight: '700', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '1.5rem' }}>Our Legacy</p>
+          <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)', fontWeight: '900', marginBottom: '1.5rem', lineHeight: '1.05', background: 'linear-gradient(135deg, #fff 0%, #96c8e1 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+            {title}<span style={{ display: 'inline-block', animation: 'blink 0.7s step-end infinite', WebkitTextFillColor: '#96c8e1' }}>|</span>
+          </h1>
+          <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.4rem)', lineHeight: '1.8', marginBottom: '2.5rem', color: '#f0f0f0', fontWeight: '400', minHeight: '3em' }}>{sub}</p>
           <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.8rem', padding: '1rem 2.5rem', background: 'linear-gradient(135deg, #006496, #19647d)', color: '#fff', textDecoration: 'none', borderRadius: '50px', fontSize: '1rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', transition: 'all 0.4s ease', boxShadow: '0 8px 25px rgba(0,100,150,0.5), inset 0 1px 0 rgba(255,255,255,0.2)', border: '1px solid rgba(255,255,255,0.15)' }} onMouseOver={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 14px 40px rgba(0,100,150,0.65)'; }} onMouseOut={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,100,150,0.5)'; }}>← Return to Home</Link>
         </div>
       </div>
@@ -102,6 +122,7 @@ const OurWorks = () => {
       <style>{`
         .project-img-wrap:hover .project-img-hover { transform: scale(1.04); }
         .hero-works { background-attachment: fixed; }
+        @keyframes blink { 50% { opacity: 0; } }
 
         @media (max-width: 968px) {
           .project-showcase { grid-template-columns: 1fr !important; gap: 2rem !important; }

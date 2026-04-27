@@ -1,11 +1,42 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import SEO from '../components/SEO';
 
+const useTypewriter = (text, speed = 50) => {
+  const [displayed, setDisplayed] = useState('');
+  useEffect(() => {
+    setDisplayed('');
+    let i = 0;
+    const t = setInterval(() => {
+      setDisplayed(text.slice(0, ++i));
+      if (i >= text.length) clearInterval(t);
+    }, speed);
+    return () => clearInterval(t);
+  }, [text, speed]);
+  return displayed;
+};
+
 const Home = () => {
-  const settings = { dots: true, infinite: true, speed: 1000, slidesToShow: 1, slidesToScroll: 1, autoplay: true, autoplaySpeed: 5000, fade: true, arrows: true };
+  const HeroContent = () => {
+    const title = useTypewriter('Building the Digital Future.', 45);
+    const sub = useTypewriter('We craft scalable web applications and full-stack solutions that transform ideas into powerful digital experiences.', 18);
+    return (
+      <div className="hero-content">
+        <p className="hero-label">Zewo Tech Solutions</p>
+        <h1 className="hero-title">{title}<span className="cursor">|</span></h1>
+        <p className="hero-sub">{sub}</p>
+        <div className="hero-btns">
+          <Link to="/portfolio" className="btn-glass-primary">Explore Portfolio</Link>
+          <Link to="/works" className="btn-glass-outline">Our Works</Link>
+        </div>
+      </div>
+    );
+  };
+
+  const settings = { dots: true, infinite: true, speed: 1000, slidesToShow: 1, slidesToScroll: 1, autoplay: true, autoplaySpeed: 5000, fade: true, arrows: false };
 
   const slides = [
     'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=80',
@@ -83,15 +114,7 @@ const Home = () => {
             <div key={i}>
               <div className="hero-slide" style={{ backgroundImage: `url(${slide})` }}>
                 <div className="hero-overlay">
-                  <div className="hero-glass-card">
-                    <p className="hero-label">Zewo Tech Solutions</p>
-                    <h1 className="hero-title">Building the<br />Digital Future.</h1>
-                    <p className="hero-sub">We craft scalable web applications and full-stack solutions that transform ideas into powerful digital experiences.</p>
-                    <div className="hero-btns">
-                      <Link to="/portfolio" className="btn-glass-primary">Explore Portfolio</Link>
-                      <Link to="/works" className="btn-glass-outline">Our Works</Link>
-                    </div>
-                  </div>
+                  <HeroContent />
                 </div>
               </div>
             </div>
@@ -208,14 +231,9 @@ const Home = () => {
         .hero-wrap { width: 100vw; height: 100vh; position: relative; overflow: hidden; }
         .hero-slide { width: 100vw; height: 100vh; background-size: cover; background-position: center; position: relative; }
         .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,20,40,0.75) 0%, rgba(0,50,80,0.5) 100%); display: flex; align-items: center; justify-content: center; padding: 0 5%; }
-        .hero-glass-card {
-          max-width: 800px; text-align: center;
-          background: rgba(255,255,255,0.08);
-          backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-          border: 1px solid rgba(255,255,255,0.15);
-          border-radius: 32px; padding: 3.5rem 4rem;
-          box-shadow: 0 20px 60px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2);
-        }
+        .hero-content { max-width: 800px; text-align: center; }
+        .cursor { display: inline-block; animation: blink 0.7s step-end infinite; color: #96c8e1; }
+        @keyframes blink { 50% { opacity: 0; } }
         .hero-label { color: #96c8e1; font-size: 0.85rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.2rem; }
         .hero-title { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif; }
         .hero-sub { font-size: clamp(1rem, 2vw, 1.2rem); color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 2.5rem; }

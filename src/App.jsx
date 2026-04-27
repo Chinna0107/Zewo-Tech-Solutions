@@ -7,6 +7,8 @@ import Contact from './pages/Contact'
 import OurWorks from './pages/OurWorks'
 import Portfolio from './pages/Portfolio'
 import ProjectDetail from './pages/ProjectDetail'
+import Careers from './pages/Careers'
+import InternshipRegister from './pages/InternshipRegister'
 import Bill from './pages/Bill'
 import './App.css'
 
@@ -22,6 +24,8 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/project/:slug" element={<ProjectDetail />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/internship/register" element={<InternshipRegister />} />
           <Route path="/bill" element={<Bill />} />
           <Route path="/start" element={<div>Start Project</div>} />
         </Routes>
